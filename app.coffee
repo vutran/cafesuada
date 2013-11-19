@@ -53,9 +53,6 @@
       # The route function
       routeCb = false
 
-
-      console.log file
-
       # If the file doesn't exist, fallback to index router
       file = _getRouteFile("index")  unless fs.existsSync(file)
 
