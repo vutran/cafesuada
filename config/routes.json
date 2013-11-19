@@ -1,0 +1,7 @@
+{
+	"GET /" : "index",
+	"GET /news" : "news/archive",
+	"GET /news/:postid/" : "news/single",
+	"POST /news/:postid/" : "news/post",
+	"DELETE /news/:postid/" : "news/delete"
+}
