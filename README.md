@@ -38,6 +38,8 @@ This is used to define the view rendering engine for the application.
 ***Currently Supports:***
 
 * `ejs`
+* `haml`
+* `jade`
 
 #### css
 
@@ -108,6 +110,9 @@ Run `grunt` in your project's root directory to compile the assets folder into y
 You should place all files into the assets directory when compiling your public folder.
 
 # CHANGELOG
+
+## Current Iteration
+* Added more view engines: `haml`, `jade`
 
 ## 0.0.2
 * Fixed `grunt` for JS files
