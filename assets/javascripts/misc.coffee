@@ -1,5 +1,5 @@
 ###
-  Misc. JS module
+#  Misc. JS module
 ###
 misc = (->
 

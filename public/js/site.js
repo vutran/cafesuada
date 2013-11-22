@@ -1,5 +1,5 @@
 /*
-  Misc. JS module
+#  Misc. JS module
 */
 
 
@@ -11,7 +11,7 @@
   });
 
   /*
-   The main site object
+  # The main site object
   */
 
 

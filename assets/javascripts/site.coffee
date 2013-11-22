@@ -1,5 +1,5 @@
 ###
- The main site object
+# The main site object
 ###
 site = (->
 
