@@ -1,5 +1,5 @@
 ###
-Specify your application's environment
+# Specify your application's environment
 ###
 module.exports =
   local:

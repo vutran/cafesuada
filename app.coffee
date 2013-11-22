@@ -1,31 +1,31 @@
 (->
 
   # Load the boot
-  boot = require("./config/boot")
+  boot = require "./config/boot"
 
   # Load the application paths
-  paths = require("./config/paths")
+  paths = require "./config/paths"
 
   # Load ExpressJS
-  express = require("express")
+  express = require "express"
 
   # Load FileSystem
-  fs = require("fs")
+  fs = require "fs"
 
   # Create a new Express app
   app = express()
 
   # Load Middlewares
-  middleWares = require("./inc/middlewares")
+  middleWares = require "./inc/middlewares"
 
   # Set the port as the environment's port or fallback to local port
   port = process.env.PORT or boot.local.port
 
   ###
-  Loads the routes from the routes.json config file
-
-  @access private
-  @return void
+  # Loads the routes from the routes.json config file
+  #
+  # @access private
+  # @return void
   ###
   _loadRoutes = ->
 
@@ -34,30 +34,30 @@
 
     # Load the routes
     req = false
-    routes = require("./config/routes.json")
+    routes = require "./config/routes.json"
     totalRoutes = routes.length
     for req of routes
 
       # Split the method and URI
-      routeParts = req.split(" ")
+      routeParts = req.split " "
 
       # Down-case the method
       method = routeParts[0].toLowerCase()
 
       # Set the request URI
-      uri = routeParts[1].replace(/\/?$/, "/") or "/"
+      uri = routeParts[1].replace /\/?$/, "/" or "/"
 
       # Retrieve the route file for the request
-      file = _getRouteFile(routes[req])
+      file = _getRouteFile routes[req]
 
       # The route function
       routeCb = false
 
       # If the file doesn't exist, fallback to index router
-      file = _getRouteFile("index")  unless fs.existsSync(file)
+      file = _getRouteFile "index" unless fs.existsSync file
 
       # Define the route callback function
-      routeCb = require(file)
+      routeCb = require file
 
       # Define the route based on the method
       switch method
@@ -79,10 +79,10 @@
 
 
   ###
-  Sets up the applicaiton directories
-
-  @access private
-  @return void
+  # Sets up the application directories
+  #
+  # @access private
+  # @return void
   ###
   _setupDirectories = ->
     app.set "routes", __dirname + "/" + paths.app + "/" + paths.routes
@@ -90,14 +90,14 @@
     app.set "views", __dirname + "/" + paths.app + "/" + paths.views
 
     # Set the static directory
-    app.use express.static(__dirname + "/public")
+    app.use express.static __dirname + "/public"
 
   ###
-  Retrieve the route file without a trailing slash
-
-  @access private
-  @param string file       The filename of the routes
-  @return string
+  # Retrieve the route file without a trailing slash
+  #
+  # @access private
+  # @param string file       The filename of the routes
+  # @return string
   ###
   _getRouteFile = (file) ->
     app.get("routes") + "/" + file + '.coffee'
