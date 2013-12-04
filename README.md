@@ -11,7 +11,7 @@ A CoffeeScript-based MVC framework built on top of the Express framework and Gru
 
 ## Launch App
 
-`foreman start` or `coffee app.coffee`
+`coffee app.coffee`
 
 ## Default Local URL
 
@@ -111,8 +111,9 @@ You should place all files into the assets directory when compiling your public 
 
 # CHANGELOG
 
-## Current Iteration
+## 0.0.3
 * Added more view engines: `haml`, `jade`
+* Added clustering
 
 ## 0.0.2
 * Fixed `grunt` for JS files

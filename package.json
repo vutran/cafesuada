@@ -1,7 +1,7 @@
 {
   "name": "cafesuada",
   "description": "A CoffeeScript-based MVC framework built on top of ExpressJS.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/vutran/cafesuada",
   "repository": {
     "type": "git",
