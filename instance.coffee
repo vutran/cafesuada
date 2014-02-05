@@ -100,7 +100,8 @@
   # @return string
   ###
   _getRouteFile = (file) ->
-    app.get("routes") + "/" + file + '.coffee'
+    ext = '.js' unless fs.existsSync '.coffee'
+    app.get("routes") + "/" + file + ext
 
   # !----- Bootstrap
 
